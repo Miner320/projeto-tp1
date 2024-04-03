@@ -14,6 +14,19 @@ bool isUpperCase(char caractere){
 
 }
 
+bool checkNome(string nomeTeste){
+
+    if(isUpperCase(nomeTeste[0])==0){
+        return 0;
+    }
+    if(nomeTeste.length()<3 || nomeTeste.length()>10){
+        return 0;
+    }
+
+    return 1;
+
+}
+
 //metodos da classe Percentual
 
 bool Percentual::validar(int valorTeste){
@@ -147,24 +160,22 @@ bool Nome::validar(std::string nomeTeste){
         }
     }
 
-    if(blankSpaceQuantity != 1){
+    switch(blankSpaceQuantity){
+
+        case 0:
+            return checkNome(nomeTeste);
+
+        case 1:
+            blankSpaceIndex = nomeTeste.find(' ');
+            primeiroNome.insert(0,nomeTeste,0,blankSpaceIndex);
+            sobreNome.append(nomeTeste,blankSpaceIndex+1);
+
+            return (checkNome(primeiroNome) && checkNome(sobreNome));
+
+        default:
         return 0;
+        
     }
-
-    blankSpaceIndex = nomeTeste.find(" "); //variavel que armazena o index do primeiro espaço em branco
-
-    primeiroNome.insert(0,nomeTeste,0,blankSpaceIndex); //variavel que armazena o primeiro nome da pessoa
-    sobreNome.append(nomeTeste,blankSpaceIndex+1);//variavel que armazena o sobrenome da pessoa
-
-    if( isUpperCase(primeiroNome[0]) == 0 || isUpperCase(sobreNome[0] == 0)){
-        return 0;
-    }
-
-    if( (primeiroNome.length() < 3 || primeiroNome.length() > 10) || (sobreNome.length() < 3 || sobreNome.length() > 10) ){
-        return 0;
-    }
-
-    return 1;
 
 }
 

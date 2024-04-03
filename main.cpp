@@ -114,3 +114,43 @@ using namespace std;
         REQUIRE(t1.getCodPagamento().compare("12345678")==0);
 
     }
+
+    TEST_CASE("validacao de nomes", "[nome]"){
+
+        Nome t1;
+
+        REQUIRE(t1.getNome().compare("")==0);
+
+        t1.setNome("aaaaaaaaaaaaa");
+
+        REQUIRE(t1.getNome().compare("")==0);
+
+        t1.setNome("an1");
+
+        REQUIRE(t1.getNome().compare("")==0);
+
+        t1.setNome("An00");
+
+        REQUIRE(t1.getNome().compare("")==0);
+
+        t1.setNome("ana");
+
+        REQUIRE(t1.getNome().compare("")==0);
+
+        t1.setNome("Ana ");
+
+        REQUIRE(t1.getNome().compare("")==0);
+
+        t1.setNome(" Maria");
+
+        REQUIRE(t1.getNome().compare("")==0);
+
+        t1.setNome("John");
+
+        REQUIRE(t1.getNome().compare("John")==0);
+
+        t1.setNome("John Travolta");
+
+        REQUIRE(t1.getNome().compare("John Travolta")==0);
+
+    }

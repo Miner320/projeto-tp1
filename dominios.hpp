@@ -96,7 +96,7 @@ inline string codPagamento::getCodPagamento() const{
 class Nome {
 
     private:
-        string nome = NULL;
+        string nome = "";
         bool validar(string);
     public:
         void setNome(string);
