@@ -694,3 +694,12 @@
 	<string>
 	<cctype>
 
+1711908803 source:/home/pedro/source/tp1/projeto_tp1/dominios.cpp
+	"dominios.hpp"
+	<string>
+	<cctype>
+
+1712142731 /home/pedro/source/tp1/projeto_tp1/dominios.hpp
+	<stdexcept>
+	<string>
+

@@ -28,7 +28,7 @@ inline int Percentual::getPercentual() const{
 class Estado {
 
     private:
-        string tipoEstado = NULL;
+        string tipoEstado = "";
         bool validar(string);
     public:
         void setEstado(string);
@@ -62,7 +62,7 @@ inline float Dinheiro::getDinheiro() const{
 class Setor {
 
     private:
-        string nomeSetor = NULL;
+        string nomeSetor = "";
         bool validar(string);
     public:
         void setSetor(string);
@@ -79,7 +79,7 @@ inline string Setor::getSetor() const{
 class codPagamento {
 
     private:
-        string codigo = NULL;
+        string codigo = "";
         bool validar(string);
     public:
         void setCodPagamento(string);
