@@ -1,6 +1,7 @@
 #include "dominios.hpp"
 #include <string>
-#include <cctype>
+#include <regex>
+#include<cstdlib>
 
 //
 
@@ -106,7 +107,7 @@ bool Setor::validar(std::string setorTeste){
 }
 
 void Setor::setSetor(std::string nomeSetor){
-    
+
     if( validar(nomeSetor) ){
         this->nomeSetor = nomeSetor;
     }
@@ -174,7 +175,7 @@ bool Nome::validar(std::string nomeTeste){
 
         default:
         return 0;
-        
+
     }
 
 }
@@ -185,4 +186,106 @@ void Nome::setNome(std::string nome){
             this-> nome = nome;
         }
 
+}
+
+//metodos da classe CodigoTitulo
+
+bool CodigoTitulo::validar(std::string codigoTeste){
+
+    if(codigoTeste.length() != 11){
+        return 0;
+    }
+
+    std::string codigosPossiveis[6] = {"CDB", "CRA", "CRI", "LCA", "LCI", "DEB"};
+    std::string inicio = "";
+    std::string final = "";
+    bool valInicio=0, valFinal=1;
+
+    inicio.insert(0,codigoTeste,0,3);
+    final.append(codigoTeste,3);
+
+    for(int i=0;i<8;i++){
+        if(inicio == codigosPossiveis[i]){
+            valInicio = 1;
+        }
+    }
+
+    for(int i=0;i<8;i++){
+
+        if(isUpperCase(final[i]) == 0  && isdigit(final[i])==0){
+            valFinal = 0;
+        }
+    }
+
+    return (valInicio && valFinal);
+
+}
+
+void CodigoTitulo::setCodigoTitulo(std::string codigo){
+
+    if(validar(codigo)){
+        this->codigo = codigo;
+    }
+
+}
+
+//metodos da classe Data
+
+bool Data::validar(std::string DataTeste){
+
+    if( regex_match(DataTeste,regex("^\\d{2}[-]\\d{2}[-]\\d{4}$")) == 0){
+        return 0;
+    }
+
+    int dia,mes,ano;
+    string temp;
+    bool anoBissexto;
+
+    temp.assign(DataTeste,0,2);
+    dia = atoi(temp.c_str());
+
+    temp.assign(DataTeste,3,2);
+    mes = atoi(temp.c_str());
+
+    temp.assign(DataTeste,6,4);
+    ano = atoi(temp.c_str());
+
+    if(dia<1 || dia>31){
+        return 0;
+    }
+
+    if(mes<1 || mes>12){
+        return 0;
+    }
+
+    if(ano<2000 || ano>2100){
+        return 0;
+    }
+
+    anoBissexto = ( (ano-2000)%4==0 )? true : false;
+
+    if(mes == 2){
+
+        if(anoBissexto){
+            return (dia <= 29);
+        } else {
+            return (dia <= 28);
+        }
+
+        return 1;
+    }
+
+    if(mes == 4 || mes == 6 || mes == 9 || mes == 11){
+        return (dia <= 30);
+    }
+
+    return 1;
+
+}
+
+void Data::setData(string data){
+
+    if(validar(data)){
+        this->data = data;
+    }    
 }

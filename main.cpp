@@ -154,3 +154,75 @@ using namespace std;
         REQUIRE(t1.getNome().compare("John Travolta")==0);
 
     }
+
+    TEST_CASE("valicadao de CodigoTitulo", "[CodigoTitulo]"){
+
+        CodigoTitulo t1;
+
+        REQUIRE(t1.getCodigoTitulo().compare("")==0);
+
+        t1.setCodigoTitulo("aaaaaaaaaa");
+
+        REQUIRE(t1.getCodigoTitulo().compare("")==0);
+
+        t1.setCodigoTitulo("CDB1234a678");
+
+        REQUIRE(t1.getCodigoTitulo().compare("")==0);
+
+        t1.setCodigoTitulo("aaa12345678");
+
+        REQUIRE(t1.getCodigoTitulo().compare("")==0);
+
+        t1.setCodigoTitulo("CDB123456");
+
+        REQUIRE(t1.getCodigoTitulo().compare("")==0);
+
+        t1.setCodigoTitulo("CDB12345678");
+
+        REQUIRE(t1.getCodigoTitulo().compare("CDB12345678")==0);
+
+        t1.setCodigoTitulo("CRAA1234567");
+
+        REQUIRE(t1.getCodigoTitulo().compare("CRAA1234567")==0);
+
+    }
+
+    TEST_CASE("validacao de data", "[data]"){
+
+        Data t1;
+
+        REQUIRE(t1.getData().compare("")==0);
+
+        t1.setData("12-04-1042");
+
+        REQUIRE(t1.getData().compare("")==0);
+
+        t1.setData("15-06-200a");
+
+        REQUIRE(t1.getData().compare("")==0);
+
+        t1.setData("30-02-2007");
+
+        REQUIRE(t1.getData().compare("")==0);
+
+        t1.setData("31-04-2003");
+
+        REQUIRE(t1.getData().compare("")==0);
+
+        t1.setData("29-02-2023");
+
+        REQUIRE(t1.getData().compare("")==0);
+
+        t1.setData("15-05-2006");
+
+        REQUIRE(t1.getData().compare("15-05-2006")==0);
+
+        t1.setData("30-04-2003");
+
+        REQUIRE(t1.getData().compare("30-04-2003")==0);
+
+        t1.setData("29-02-2024");
+
+        REQUIRE(t1.getData().compare("29-02-2024")==0);
+
+    }

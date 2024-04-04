@@ -107,4 +107,36 @@ inline string Nome::getNome() const{
     return nome;
 }
 
+//classe CodigoTitulo
+
+class CodigoTitulo {
+
+    private:
+        string codigo = "";
+        bool validar(string);
+    public:
+        void setCodigoTitulo(string);
+        string getCodigoTitulo() const;
+};
+
+inline string CodigoTitulo::getCodigoTitulo() const{
+    return codigo;
+}
+
+//classe Data
+
+class Data{
+
+    private:
+        string data = "";
+        bool validar(string);
+    public:
+        void setData(string);
+        string getData() const;
+};
+
+inline string Data::getData() const{
+    return data;
+}
+
 #endif
