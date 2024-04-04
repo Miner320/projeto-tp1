@@ -226,3 +226,27 @@ using namespace std;
         REQUIRE(t1.getData().compare("29-02-2024")==0);
 
     }
+
+    TEST_CASE("validacao de cpf", "[cpf]"){
+
+        CPF t1;
+
+        REQUIRE(t1.getCPF()=="");
+
+        t1.setCPF("000.123.12a-08");
+
+        REQUIRE(t1.getCPF()=="");
+
+        t1.setCPF("000.000.123-99");
+
+        REQUIRE(t1.getCPF()=="");
+
+        t1.setCPF("111.444.777-35");
+
+        REQUIRE(t1.getCPF()=="111.444.777-35");
+
+        t1.setCPF("083.422.731-21");
+
+        REQUIRE(t1.getCPF()=="083.422.731-21");
+
+    }

@@ -1,9 +1,9 @@
 #include "dominios.hpp"
 #include <string>
 #include <regex>
-#include<cstdlib>
+#include <cstdlib>
 
-//
+//funcoes de assistencia
 
 bool isUpperCase(char caractere){
 
@@ -287,5 +287,56 @@ void Data::setData(string data){
 
     if(validar(data)){
         this->data = data;
+    }    
+}
+
+//metodos da classe CPF
+
+bool CPF::validar(string CPFteste){
+
+    if( regex_match(CPFteste,regex("^\\d{3}[.]\\d{3}[.]\\d{3}[-]\\d{2}$")) == 0){
+        return 0;
+    }
+
+    string digitosCPF,digitosValidacao;
+    int soma,digitosCalculados[2];
+
+    digitosCPF = CPFteste.substr(0,3) + CPFteste.substr(4,3) + CPFteste.substr(8,3);
+    digitosValidacao = CPFteste.substr(12,2);
+
+    soma = 0;
+    for(int i=0;i<9;i++){
+        soma = soma + (10-i)*atoi(digitosCPF.substr(i,1).c_str());
+    }
+
+    if( (soma%11) < 2 ){
+        digitosCalculados[0] = 0;
+    } else {
+        digitosCalculados[0] = 11 - soma%11;
+    }
+
+    soma = 0;
+        for(int i=0;i<9;i++){
+        soma = soma + (11-i)*atoi(digitosCPF.substr(i,1).c_str());
+    }
+    soma = soma + 2*digitosCalculados[0];
+
+    if( (soma%11) < 2){
+        digitosCalculados[1] = 0;
+    } else {
+        digitosCalculados[1] = 11 - soma%11;
+    }
+
+    if(digitosCalculados[0] != atoi(digitosValidacao.substr(0,1).c_str()) || digitosCalculados[1] !=atoi(digitosValidacao.substr(1,1).c_str())){
+        return 0;
+    }
+
+    return 1;
+}
+
+void CPF::setCPF(string cpf){
+
+    if(validar(cpf)){
+        this->CPF = cpf;
     }    
 }

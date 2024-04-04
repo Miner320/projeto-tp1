@@ -139,4 +139,21 @@ inline string Data::getData() const{
     return data;
 }
 
+//classe CPF
+
+class CPF{
+
+    private:
+        string CPF = "";
+        bool validar(string);
+    public:
+        void setCPF(string);
+        string getCPF() const;
+
+};
+
+inline string CPF::getCPF() const{
+    return CPF;
+}
+
 #endif
