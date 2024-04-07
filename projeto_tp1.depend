@@ -700,11 +700,11 @@
 	<regex>
 	<cstdlib>
 
-1712259092 /home/pedro/source/tp1/projeto_tp1/dominios.hpp
+1712524225 /home/pedro/source/tp1/projeto_tp1/dominios.hpp
 	<stdexcept>
 	<string>
 
-1712259047 source:/home/pedro/source/tp1/projeto_tp1/main.cpp
+1712259705 source:/home/pedro/source/tp1/projeto_tp1/main.cpp
 	"dominios.hpp"
 	"catch.hpp"
 	<string>

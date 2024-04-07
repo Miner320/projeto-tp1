@@ -15,19 +15,6 @@ bool isUpperCase(char caractere){
 
 }
 
-bool checkNome(string nomeTeste){
-
-    if(isUpperCase(nomeTeste[0])==0){
-        return 0;
-    }
-    if(nomeTeste.length()<3 || nomeTeste.length()>10){
-        return 0;
-    }
-
-    return 1;
-
-}
-
 //metodos da classe Percentual
 
 bool Percentual::validar(int valorTeste){
@@ -185,6 +172,19 @@ void Nome::setNome(std::string nome){
         if(validar(nome)){
             this-> nome = nome;
         }
+
+}
+
+bool Nome::checkNome(string nomeTeste){
+
+    if(isUpperCase(nomeTeste[0])==0){
+        return 0;
+    }
+    if(nomeTeste.length()<3 || nomeTeste.length()>10){
+        return 0;
+    }
+
+    return 1;
 
 }
 

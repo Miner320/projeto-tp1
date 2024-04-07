@@ -98,6 +98,7 @@ class Nome {
     private:
         string nome = "";
         bool validar(string);
+        bool checkNome(string);
     public:
         void setNome(string);
         string getNome() const;
