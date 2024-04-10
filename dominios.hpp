@@ -12,7 +12,7 @@ class Percentual {
 
     private:
         int valor;
-        bool validar(int);
+        void validar(int);
     public:
         void setPercentual(int);
         int getPercentual() const;
@@ -31,7 +31,7 @@ class Estado {
 
     private:
         string tipoEstado;
-        bool validar(string);
+        void validar(string);
     public:
         void setEstado(string);
         string getEstado() const;
@@ -50,7 +50,7 @@ class Dinheiro {
 
     private:
         float valor;
-        bool validar(float);
+        void validar(float);
     public:
         void setDinheiro(float);
         float getDinheiro() const;
@@ -69,7 +69,7 @@ class Setor {
 
     private:
         string nomeSetor;
-        bool validar(string);
+        void validar(string);
     public:
         void setSetor(string);
         string getSetor() const;
@@ -88,7 +88,7 @@ class codPagamento {
 
     private:
         string codigo;
-        bool validar(string);
+        void validar(string);
     public:
         void setCodPagamento(string);
         string getCodPagamento () const;

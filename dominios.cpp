@@ -12,24 +12,22 @@ Percentual::Percentual(void){
 }
 
 Percentual::Percentual(int valor){
-    if( validar(valor) ){
-        this->valor = valor;
-    }
+    validar(valor);
+    this->valor = valor;
 }
 
 
-bool Percentual::validar(int valorTeste){
+void Percentual::validar(int valorTeste){
 
     if(0 <= valorTeste && valorTeste <= 100){
-        return 1;
+        return;
     }
-    return 0;
+    throw invalid_argument("Valor deve estar no intervalo [0,100]");
 }
 
 void Percentual::setPercentual(int valor){
-    if( validar(valor) ){
+    validar(valor);
         this->valor = valor;
-    }
 }
 
 //metodos da classe Estado
@@ -39,33 +37,29 @@ Estado::Estado(void){
 }
 
 Estado::Estado(string estado){
-    if( validar(estado) ){
+    validar(estado);
         this->tipoEstado = estado;
-    }
 }
 
-bool Estado::validar(std::string estadoTeste){
+void Estado::validar(std::string estadoTeste){
 
     std::string estadosPossiveis[3] = {"Previsto", "Liquidado", "Inadimplente"};
 
     for(int i = 0; i < 3; i++){
 
         if(estadoTeste == estadosPossiveis[i]){
-            return 1;
+            return;
         }
 
     }
 
-    return 0;
+    throw invalid_argument("Nome não corresponde à nenhum estado permitido");
 
 }
 
 void Estado::setEstado(std::string tipoEstado){
-
-    if( validar(tipoEstado) ){
-        this->tipoEstado = tipoEstado;
-    }
-
+    validar(tipoEstado);
+    this->tipoEstado = tipoEstado;
 }
 
 //metodos da classe Dinheiro
@@ -75,27 +69,24 @@ Dinheiro::Dinheiro(void){
 }
 
 Dinheiro::Dinheiro(float valor){
-    if( validar(valor) ){
-        this->valor = valor;
-    }
+    validar(valor);
+    this->valor = valor;
 }
 
 
-bool Dinheiro::validar(float valorTeste){
+void Dinheiro::validar(float valorTeste){
 
     if(0<=valorTeste && valorTeste <= 1000000){
-        return 1;
+        return;
     }
-    return 0;
+
+    throw invalid_argument("Valor não está no intervalo [0,10^6]");
 
 }
 
 void Dinheiro::setDinheiro(float valor){
-
-    if( validar(valor) ){
-        this->valor = valor;
-    }
-
+    validar(valor);
+    this->valor = valor;
 }
 
 //metodos da classe Setor
@@ -105,32 +96,28 @@ Setor::Setor(void){
 }
 
 Setor::Setor(string setor){
-    if( validar(setor) ){
-        this->nomeSetor = setor;
-    }
+    validar(setor);
+    this->nomeSetor = setor;
 }
 
-bool Setor::validar(std::string setorTeste){
+void Setor::validar(std::string setorTeste){
 
     std::string setoresPossiveis[10] = {"Agricultura", "Construção civil", "Energia", "Finanças", "Imobiliário",
     "Papel e celulose", "Pecuária", "Química e petroquímica", "Metalurgia e siderurgia", "Mineração"};
 
     for(int i = 0; i < 10; i++){
         if(setorTeste == setoresPossiveis[i]){
-            return 1;
+            return;
         }
     }
 
-    return 0;
+    throw invalid_argument("Nome não corresponde à nenhum setor permitido");
 
 }
 
 void Setor::setSetor(std::string nomeSetor){
-
-    if( validar(nomeSetor) ){
-        this->nomeSetor = nomeSetor;
-    }
-
+    validar(nomeSetor);
+    this->nomeSetor = nomeSetor;
 }
 
 //metodos da classe codPagamento
@@ -140,37 +127,33 @@ codPagamento::codPagamento(void){
 }
 
 codPagamento::codPagamento(string codigo){
-    if( validar(codigo) ){
-        this->codigo = codigo;
-    }
+    validar(codigo);
+    this->codigo = codigo;
 }
 
-bool codPagamento::validar(std::string codigoTeste){
+void codPagamento::validar(std::string codigoTeste){
 
     if(codigoTeste.length() != 8){
-        return 0;
+        throw invalid_argument("Comprimento do código inválido, deve ter comprimento igual a 8");
     }
 
     if(codigoTeste[0]<'1' || codigoTeste[0]>'9'){
-        return 0;
+        throw invalid_argument("Primeiro digito inválido, primeiro digito deve ser diferente de zero");
     }
 
     for(int i=0; i<8; i++){
         if(isdigit(codigoTeste[i])== 0){
-            return 0;
+            throw invalid_argument("Caractere invalido presente no código, só são permitidos números");
         }
     }
 
-return 1;
+return;
 
 }
 
 void codPagamento::setCodPagamento(std::string codigo){
-
-    if( validar(codigo) ){
-        this->codigo = codigo;
-    }
-
+    validar(codigo);
+    this->codigo = codigo;
 }
 
 //metodos da classe Nome
