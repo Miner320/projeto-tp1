@@ -157,4 +157,13 @@ inline string CPF::getCPF() const{
     return CPF;
 }
 
+//classe Utilities
+
+class Utilities{
+
+    public:
+        static bool isUpperCase(char);
+
+};
+
 #endif

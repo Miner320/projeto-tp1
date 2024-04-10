@@ -3,19 +3,10 @@
 #include <regex>
 #include <cstdlib>
 
-//funcoes de assistencia
-
-bool isUpperCase(char caractere){
-
-    if(caractere < 'A' || caractere > 'Z'){
-        return 0;
-    }
-
-    return 1;
-
-}
 
 //metodos da classe Percentual
+
+
 
 bool Percentual::validar(int valorTeste){
 
@@ -167,6 +158,7 @@ bool Nome::validar(std::string nomeTeste){
 
 }
 
+
 void Nome::setNome(std::string nome){
 
         if(validar(nome)){
@@ -177,7 +169,7 @@ void Nome::setNome(std::string nome){
 
 bool Nome::checkNome(string nomeTeste){
 
-    if(isUpperCase(nomeTeste[0])==0){
+    if(Utilities::isUpperCase(nomeTeste[0])==0){
         return 0;
     }
     if(nomeTeste.length()<3 || nomeTeste.length()>10){
@@ -212,7 +204,7 @@ bool CodigoTitulo::validar(std::string codigoTeste){
 
     for(int i=0;i<8;i++){
 
-        if(isUpperCase(final[i]) == 0  && isdigit(final[i])==0){
+        if(Utilities::isUpperCase(final[i]) == 0  && isdigit(final[i])==0){
             valFinal = 0;
         }
     }
@@ -339,4 +331,16 @@ void CPF::setCPF(string cpf){
     if(validar(cpf)){
         this->CPF = cpf;
     }    
+}
+
+//metodos da classe Utilities
+
+bool Utilities::isUpperCase(char caractere){
+
+    if(caractere < 'A' || caractere > 'Z'){
+        return 0;
+    }
+
+    return 1;
+
 }
