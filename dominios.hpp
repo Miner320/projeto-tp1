@@ -11,11 +11,13 @@ using namespace std;
 class Percentual {
 
     private:
-        int valor = NULL;
+        int valor;
         bool validar(int);
     public:
         void setPercentual(int);
         int getPercentual() const;
+        Percentual(void);
+        Percentual(int);
 
 };
 
@@ -28,11 +30,13 @@ inline int Percentual::getPercentual() const{
 class Estado {
 
     private:
-        string tipoEstado = "";
+        string tipoEstado;
         bool validar(string);
     public:
         void setEstado(string);
         string getEstado() const;
+        Estado(void);
+        Estado(string);
 
 };
 
@@ -45,11 +49,13 @@ inline string Estado::getEstado() const{
 class Dinheiro {
 
     private:
-        float valor = NULL;
+        float valor;
         bool validar(float);
     public:
         void setDinheiro(float);
         float getDinheiro() const;
+        Dinheiro(void);
+        Dinheiro(float);
 
 };
 
@@ -62,11 +68,13 @@ inline float Dinheiro::getDinheiro() const{
 class Setor {
 
     private:
-        string nomeSetor = "";
+        string nomeSetor;
         bool validar(string);
     public:
         void setSetor(string);
         string getSetor() const;
+        Setor(void);
+        Setor(string);
 
 };
 
@@ -79,11 +87,13 @@ inline string Setor::getSetor() const{
 class codPagamento {
 
     private:
-        string codigo = "";
+        string codigo;
         bool validar(string);
     public:
         void setCodPagamento(string);
         string getCodPagamento () const;
+        codPagamento(void);
+        codPagamento(string);
 
 };
 
@@ -96,12 +106,14 @@ inline string codPagamento::getCodPagamento() const{
 class Nome {
 
     private:
-        string nome = "";
+        string nome;
         bool validar(string);
         bool checkNome(string);
     public:
         void setNome(string);
         string getNome() const;
+        Nome(void);
+        Nome(string);
 };
 
 inline string Nome::getNome() const{
@@ -113,11 +125,13 @@ inline string Nome::getNome() const{
 class CodigoTitulo {
 
     private:
-        string codigo = "";
+        string codigo;
         bool validar(string);
     public:
         void setCodigoTitulo(string);
         string getCodigoTitulo() const;
+        CodigoTitulo(void);
+        CodigoTitulo(string);
 };
 
 inline string CodigoTitulo::getCodigoTitulo() const{
@@ -129,11 +143,13 @@ inline string CodigoTitulo::getCodigoTitulo() const{
 class Data{
 
     private:
-        string data = "";
+        string data;
         bool validar(string);
     public:
         void setData(string);
         string getData() const;
+        Data(void);
+        Data(string);
 };
 
 inline string Data::getData() const{
@@ -145,16 +161,18 @@ inline string Data::getData() const{
 class CPF{
 
     private:
-        string CPF = "";
+        string CPF_value;
         bool validar(string);
     public:
         void setCPF(string);
         string getCPF() const;
+        CPF(void);
+        CPF(string);
 
 };
 
 inline string CPF::getCPF() const{
-    return CPF;
+    return this->CPF_value;
 }
 
 //classe Utilities

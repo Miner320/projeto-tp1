@@ -7,6 +7,16 @@
 //metodos da classe Percentual
 
 
+Percentual::Percentual(void){
+    valor = NULL;
+}
+
+Percentual::Percentual(int valor){
+    if( validar(valor) ){
+        this->valor = valor;
+    }
+}
+
 
 bool Percentual::validar(int valorTeste){
 
@@ -23,6 +33,16 @@ void Percentual::setPercentual(int valor){
 }
 
 //metodos da classe Estado
+
+Estado::Estado(void){
+    this->tipoEstado = "";
+}
+
+Estado::Estado(string estado){
+    if( validar(estado) ){
+        this->tipoEstado = estado;
+    }
+}
 
 bool Estado::validar(std::string estadoTeste){
 
@@ -50,6 +70,17 @@ void Estado::setEstado(std::string tipoEstado){
 
 //metodos da classe Dinheiro
 
+Dinheiro::Dinheiro(void){
+    this->valor = NULL;
+}
+
+Dinheiro::Dinheiro(float valor){
+    if( validar(valor) ){
+        this->valor = valor;
+    }
+}
+
+
 bool Dinheiro::validar(float valorTeste){
 
     if(0<=valorTeste && valorTeste <= 1000000){
@@ -68,6 +99,16 @@ void Dinheiro::setDinheiro(float valor){
 }
 
 //metodos da classe Setor
+
+Setor::Setor(void){
+    this->nomeSetor = "";
+}
+
+Setor::Setor(string setor){
+    if( validar(setor) ){
+        this->nomeSetor = setor;
+    }
+}
 
 bool Setor::validar(std::string setorTeste){
 
@@ -93,6 +134,16 @@ void Setor::setSetor(std::string nomeSetor){
 }
 
 //metodos da classe codPagamento
+
+codPagamento::codPagamento(void){
+    this->codigo = "";
+}
+
+codPagamento::codPagamento(string codigo){
+    if( validar(codigo) ){
+        this->codigo = codigo;
+    }
+}
 
 bool codPagamento::validar(std::string codigoTeste){
 
@@ -123,6 +174,16 @@ void codPagamento::setCodPagamento(std::string codigo){
 }
 
 //metodos da classe Nome
+
+Nome::Nome(void){
+    this->nome = "";
+}
+
+Nome::Nome(string nome){
+    if( validar(nome) ){
+        this->nome = nome;
+    }
+}
 
 bool Nome::validar(std::string nomeTeste){
 
@@ -182,6 +243,16 @@ bool Nome::checkNome(string nomeTeste){
 
 //metodos da classe CodigoTitulo
 
+CodigoTitulo::CodigoTitulo(void){
+    this->codigo = "";
+}
+
+CodigoTitulo::CodigoTitulo(string codigo){
+    if( validar(codigo) ){
+        this->codigo = codigo;
+    }
+}
+
 bool CodigoTitulo::validar(std::string codigoTeste){
 
     if(codigoTeste.length() != 11){
@@ -222,6 +293,16 @@ void CodigoTitulo::setCodigoTitulo(std::string codigo){
 }
 
 //metodos da classe Data
+
+Data::Data(void){
+    this->data = "";
+}
+
+Data::Data(string date){
+    if( validar(date) ){
+        this->data = date;
+    }
+}
 
 bool Data::validar(std::string DataTeste){
 
@@ -284,6 +365,16 @@ void Data::setData(string data){
 
 //metodos da classe CPF
 
+CPF::CPF(void){
+    this->CPF_value = "";
+}
+
+CPF::CPF(string cpf){
+    if( validar(cpf) ){
+        this->CPF_value = cpf;
+    }
+}
+
 bool CPF::validar(string CPFteste){
 
     if( regex_match(CPFteste,regex("^\\d{3}[.]\\d{3}[.]\\d{3}[-]\\d{2}$")) == 0){
@@ -329,7 +420,7 @@ bool CPF::validar(string CPFteste){
 void CPF::setCPF(string cpf){
 
     if(validar(cpf)){
-        this->CPF = cpf;
+        this->CPF_value = cpf;
     }    
 }
 
