@@ -11,13 +11,9 @@ using namespace std;
 
         Percentual t1;
 
-        REQUIRE(t1.getPercentual()==0);
+        CHECK_THROWS(t1.setPercentual(120));
 
-        t1.setPercentual(120);
-
-        REQUIRE(t1.getPercentual()==0);
-
-        t1.setPercentual(-50);
+        CHECK_THROWS(t1.setPercentual(-50));
 
         REQUIRE(t1.getPercentual()==0);
 
@@ -38,11 +34,9 @@ using namespace std;
 
         REQUIRE(t1.getDinheiro()==0);
 
+        CHECK_THROWS(t1.setDinheiro(-50));
+
         t1.setDinheiro(120);
-
-        REQUIRE(t1.getDinheiro()==120);
-
-        t1.setDinheiro(-50);
 
         REQUIRE(t1.getDinheiro()==120);
 
@@ -50,9 +44,7 @@ using namespace std;
 
         REQUIRE(t1.getDinheiro()==50);
 
-        t1.setDinheiro(1000000000);
-
-        REQUIRE(t1.getDinheiro()==50);
+        CHECK_THROWS(t1.setDinheiro(1000000000));
 
     }
 
@@ -63,9 +55,7 @@ using namespace std;
 
         REQUIRE(t1.getEstado().compare("")==0);
 
-        t1.setEstado("random");
-
-        REQUIRE(t1.getEstado().compare("")==0);
+        CHECK_THROWS(t1.setEstado("random"));
 
         t1.setEstado("Liquidado");
 
@@ -80,9 +70,7 @@ using namespace std;
 
         REQUIRE(t1.getSetor().compare("")==0);
 
-        t1.setSetor("random");
-
-        REQUIRE(t1.getSetor().compare("")==0);
+        CHECK_THROWS(t1.setSetor("random"));
 
         t1.setSetor("Agricultura");
 
@@ -97,17 +85,11 @@ using namespace std;
 
         REQUIRE(t1.getCodPagamento().compare("")==0);
 
-        t1.setCodPagamento("12345678000");
+        CHECK_THROWS(t1.setCodPagamento("12345678000"));
 
-        REQUIRE(t1.getCodPagamento().compare("")==0);
+        CHECK_THROWS(t1.setCodPagamento("1234567a"));
 
-        t1.setCodPagamento("1234567a");
-
-        REQUIRE(t1.getCodPagamento().compare("")==0);
-
-        t1.setCodPagamento("02345678");
-
-        REQUIRE(t1.getCodPagamento().compare("")==0);
+        CHECK_THROWS(t1.setCodPagamento("02345678"));
 
         t1.setCodPagamento("12345678");
 
@@ -119,29 +101,17 @@ using namespace std;
 
         Nome t1;
 
-        REQUIRE(t1.getNome().compare("")==0);
+        CHECK_THROWS(t1.setNome("aaaaaaaaaaaaa"));
 
-        t1.setNome("aaaaaaaaaaaaa");
+        CHECK_THROWS(t1.setNome("an1"));
 
-        REQUIRE(t1.getNome().compare("")==0);
+        CHECK_THROWS(t1.setNome("An00"));
 
-        t1.setNome("an1");
+        CHECK_THROWS(t1.setNome("ana"));
 
-        REQUIRE(t1.getNome().compare("")==0);
+        CHECK_THROWS(t1.setNome("Ana "));
 
-        t1.setNome("An00");
-
-        REQUIRE(t1.getNome().compare("")==0);
-
-        t1.setNome("ana");
-
-        REQUIRE(t1.getNome().compare("")==0);
-
-        t1.setNome("Ana ");
-
-        REQUIRE(t1.getNome().compare("")==0);
-
-        t1.setNome(" Maria");
+        CHECK_THROWS(t1.setNome(" Maria"));
 
         REQUIRE(t1.getNome().compare("")==0);
 
@@ -159,23 +129,13 @@ using namespace std;
 
         CodigoTitulo t1;
 
-        REQUIRE(t1.getCodigoTitulo().compare("")==0);
+        CHECK_THROWS(t1.setCodigoTitulo("aaaaaaaaaa"));
 
-        t1.setCodigoTitulo("aaaaaaaaaa");
+        CHECK_THROWS(t1.setCodigoTitulo("CDB1234a678"));
 
-        REQUIRE(t1.getCodigoTitulo().compare("")==0);
+        CHECK_THROWS(t1.setCodigoTitulo("aaa12345678"));
 
-        t1.setCodigoTitulo("CDB1234a678");
-
-        REQUIRE(t1.getCodigoTitulo().compare("")==0);
-
-        t1.setCodigoTitulo("aaa12345678");
-
-        REQUIRE(t1.getCodigoTitulo().compare("")==0);
-
-        t1.setCodigoTitulo("CDB123456");
-
-        REQUIRE(t1.getCodigoTitulo().compare("")==0);
+        CHECK_THROWS(t1.setCodigoTitulo("CDB123456"));
 
         t1.setCodigoTitulo("CDB12345678");
 
@@ -191,27 +151,15 @@ using namespace std;
 
         Data t1;
 
-        REQUIRE(t1.getData().compare("")==0);
+        CHECK_THROWS(t1.setData("12-04-1042"));
 
-        t1.setData("12-04-1042");
+        CHECK_THROWS(t1.setData("15-06-200a"));
 
-        REQUIRE(t1.getData().compare("")==0);
+        CHECK_THROWS(t1.setData("30-02-2007"));
 
-        t1.setData("15-06-200a");
+        CHECK_THROWS(t1.setData("31-04-2003"));
 
-        REQUIRE(t1.getData().compare("")==0);
-
-        t1.setData("30-02-2007");
-
-        REQUIRE(t1.getData().compare("")==0);
-
-        t1.setData("31-04-2003");
-
-        REQUIRE(t1.getData().compare("")==0);
-
-        t1.setData("29-02-2023");
-
-        REQUIRE(t1.getData().compare("")==0);
+        CHECK_THROWS(t1.setData("29-02-2023"));
 
         t1.setData("15-05-2006");
 
@@ -231,15 +179,9 @@ using namespace std;
 
         CPF t1;
 
-        REQUIRE(t1.getCPF()=="");
+        CHECK_THROWS(t1.setCPF("000.123.12a-08"));
 
-        t1.setCPF("000.123.12a-08");
-
-        REQUIRE(t1.getCPF()=="");
-
-        t1.setCPF("000.000.123-99");
-
-        REQUIRE(t1.getCPF()=="");
+        CHECK_THROWS(t1.setCPF("000.000.123-99"));
 
         t1.setCPF("111.444.777-35");
 

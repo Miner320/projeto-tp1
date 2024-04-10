@@ -8,142 +8,142 @@
 
 
 Percentual::Percentual(void){
-    valor = NULL;
+    this->Valor = NULL;
 }
 
 Percentual::Percentual(int valor){
     validar(valor);
-    this->valor = valor;
+    this->Valor = valor;
 }
 
 
-void Percentual::validar(int valorTeste){
+void Percentual::validar(int ValorTeste){
 
-    if(0 <= valorTeste && valorTeste <= 100){
+    if(0 <= ValorTeste && ValorTeste <= 100){
         return;
     }
-    throw invalid_argument("Valor deve estar no intervalo [0,100]");
+    __throw_invalid_argument("Valor deve estar no intervalo [0,100]");
 }
 
 void Percentual::setPercentual(int valor){
     validar(valor);
-        this->valor = valor;
+        this->Valor = valor;
 }
 
 //metodos da classe Estado
 
 Estado::Estado(void){
-    this->tipoEstado = "";
+    this->TipoEstado = "";
 }
 
-Estado::Estado(string estado){
-    validar(estado);
-        this->tipoEstado = estado;
+Estado::Estado(string Estado){
+    validar(Estado);
+        this->TipoEstado = Estado;
 }
 
-void Estado::validar(std::string estadoTeste){
+void Estado::validar(std::string EstadoTeste){
 
-    std::string estadosPossiveis[3] = {"Previsto", "Liquidado", "Inadimplente"};
+    std::string EstadosPossiveis[3] = {"Previsto", "Liquidado", "Inadimplente"};
 
     for(int i = 0; i < 3; i++){
 
-        if(estadoTeste == estadosPossiveis[i]){
+        if(EstadoTeste == EstadosPossiveis[i]){
             return;
         }
 
     }
 
-    throw invalid_argument("Nome não corresponde à nenhum estado permitido");
+    __throw_invalid_argument("Nome não corresponde à nenhum estado permitido");
 
 }
 
-void Estado::setEstado(std::string tipoEstado){
-    validar(tipoEstado);
-    this->tipoEstado = tipoEstado;
+void Estado::setEstado(std::string TipoEstado){
+    validar(TipoEstado);
+    this->TipoEstado = TipoEstado;
 }
 
 //metodos da classe Dinheiro
 
 Dinheiro::Dinheiro(void){
-    this->valor = NULL;
+    this->Valor = NULL;
 }
 
-Dinheiro::Dinheiro(float valor){
-    validar(valor);
-    this->valor = valor;
+Dinheiro::Dinheiro(float Valor){
+    validar(Valor);
+    this->Valor = Valor;
 }
 
 
-void Dinheiro::validar(float valorTeste){
+void Dinheiro::validar(float ValorTeste){
 
-    if(0<=valorTeste && valorTeste <= 1000000){
+    if(0<=ValorTeste && ValorTeste <= 1000000){
         return;
     }
 
-    throw invalid_argument("Valor não está no intervalo [0,10^6]");
+    __throw_invalid_argument("Valor não está no intervalo [0,10^6]");
 
 }
 
-void Dinheiro::setDinheiro(float valor){
-    validar(valor);
-    this->valor = valor;
+void Dinheiro::setDinheiro(float Valor){
+    validar(Valor);
+    this->Valor = Valor;
 }
 
 //metodos da classe Setor
 
 Setor::Setor(void){
-    this->nomeSetor = "";
+    this->NomeSetor = "";
 }
 
-Setor::Setor(string setor){
-    validar(setor);
-    this->nomeSetor = setor;
+Setor::Setor(string Setor){
+    validar(Setor);
+    this->NomeSetor = Setor;
 }
 
-void Setor::validar(std::string setorTeste){
+void Setor::validar(std::string SetorTeste){
 
-    std::string setoresPossiveis[10] = {"Agricultura", "Construção civil", "Energia", "Finanças", "Imobiliário",
+    std::string SetoresPossiveis[10] = {"Agricultura", "Construção civil", "Energia", "Finanças", "Imobiliário",
     "Papel e celulose", "Pecuária", "Química e petroquímica", "Metalurgia e siderurgia", "Mineração"};
 
     for(int i = 0; i < 10; i++){
-        if(setorTeste == setoresPossiveis[i]){
+        if(SetorTeste == SetoresPossiveis[i]){
             return;
         }
     }
 
-    throw invalid_argument("Nome não corresponde à nenhum setor permitido");
+    __throw_invalid_argument("Nome não corresponde à nenhum setor permitido");
 
 }
 
-void Setor::setSetor(std::string nomeSetor){
-    validar(nomeSetor);
-    this->nomeSetor = nomeSetor;
+void Setor::setSetor(std::string NomeSetor){
+    validar(NomeSetor);
+    this->NomeSetor = NomeSetor;
 }
 
 //metodos da classe codPagamento
 
 codPagamento::codPagamento(void){
-    this->codigo = "";
+    this->Codigo = "";
 }
 
-codPagamento::codPagamento(string codigo){
-    validar(codigo);
-    this->codigo = codigo;
+codPagamento::codPagamento(string Codigo){
+    validar(Codigo);
+    this->Codigo = Codigo;
 }
 
-void codPagamento::validar(std::string codigoTeste){
+void codPagamento::validar(std::string CodigoTeste){
 
-    if(codigoTeste.length() != 8){
-        throw invalid_argument("Comprimento do código inválido, deve ter comprimento igual a 8");
+    if(CodigoTeste.length() != 8){
+        __throw_invalid_argument("Comprimento do código inválido, deve ter comprimento igual a 8");
     }
 
-    if(codigoTeste[0]<'1' || codigoTeste[0]>'9'){
-        throw invalid_argument("Primeiro digito inválido, primeiro digito deve ser diferente de zero");
+    if(CodigoTeste[0]<'1' || CodigoTeste[0]>'9'){
+        __throw_invalid_argument("Primeiro digito inválido, primeiro digito deve ser diferente de zero");
     }
 
     for(int i=0; i<8; i++){
-        if(isdigit(codigoTeste[i])== 0){
-            throw invalid_argument("Caractere invalido presente no código, só são permitidos números");
+        if(isdigit(CodigoTeste[i])== 0){
+            __throw_invalid_argument("Caractere invalido presente no código, só são permitidos números");
         }
     }
 
@@ -151,72 +151,77 @@ return;
 
 }
 
-void codPagamento::setCodPagamento(std::string codigo){
-    validar(codigo);
-    this->codigo = codigo;
+void codPagamento::setCodPagamento(std::string Codigo){
+    validar(Codigo);
+    this->Codigo = Codigo;
 }
 
 //metodos da classe Nome
 
 Nome::Nome(void){
-    this->nome = "";
+    this->NomeValor = "";
 }
 
-Nome::Nome(string nome){
-    if( validar(nome) ){
-        this->nome = nome;
-    }
+Nome::Nome(string Nome){
+    validar(Nome);
+    this->NomeValor = Nome;
 }
 
-bool Nome::validar(std::string nomeTeste){
+void Nome::validar(std::string NomeTeste){
 
-    int blankSpaceIndex;
-    int blankSpaceQuantity = 0;
-    std::string primeiroNome = "", sobreNome = "";
+    int BlankSpaceIndex;
+    int BlankSpaceQuantity = 0;
+    bool Validacao;
+    std::string PrimeiroNome = "", SobreNome = "";
 
-    for (int i=0; i<nomeTeste.length();i++){ //loop para contar numero de espaços em branco
-        if( isblank(nomeTeste[i]) ){
-            blankSpaceQuantity++;
+    for (int i=0; i<NomeTeste.length();i++){ //loop para contar numero de espaços em branco
+        if( isblank(NomeTeste[i]) ){
+            BlankSpaceQuantity++;
         }
-        if( isalpha(nomeTeste[i]) == 0 && nomeTeste[i] != ' '){
-            return 0;
+        if( isalpha(NomeTeste[i]) == 0 && NomeTeste[i] != ' '){
+            __throw_invalid_argument("Caractere inválido detectado");
         }
     }
 
-    switch(blankSpaceQuantity){
+    switch(BlankSpaceQuantity){
 
         case 0:
-            return checkNome(nomeTeste);
+            Validacao = checkNome(NomeTeste);
+            break;
 
         case 1:
-            blankSpaceIndex = nomeTeste.find(' ');
-            primeiroNome.insert(0,nomeTeste,0,blankSpaceIndex);
-            sobreNome.append(nomeTeste,blankSpaceIndex+1);
+            BlankSpaceIndex = NomeTeste.find(' ');
+            PrimeiroNome.insert(0,NomeTeste,0,BlankSpaceIndex);
+            SobreNome.append(NomeTeste,BlankSpaceIndex+1);
 
-            return (checkNome(primeiroNome) && checkNome(sobreNome));
+            Validacao = (checkNome(PrimeiroNome) && checkNome(SobreNome));
+            break;
 
         default:
-        return 0;
+            Validacao = 0;
 
     }
+
+    if(Validacao == 0){
+        __throw_invalid_argument("Nome inválido inserido");
+    }
+
+    return;
 
 }
 
 
-void Nome::setNome(std::string nome){
-
-        if(validar(nome)){
-            this-> nome = nome;
-        }
-
+void Nome::setNome(std::string Nome){
+        validar(Nome);
+        this->NomeValor = Nome;
 }
 
-bool Nome::checkNome(string nomeTeste){
+bool Nome::checkNome(string NomeTeste){
 
-    if(Utilities::isUpperCase(nomeTeste[0])==0){
+    if(Utilities::isUpperCase(NomeTeste[0])==0){
         return 0;
     }
-    if(nomeTeste.length()<3 || nomeTeste.length()>10){
+    if(NomeTeste.length()<3 || NomeTeste.length()>10){
         return 0;
     }
 
@@ -227,191 +232,191 @@ bool Nome::checkNome(string nomeTeste){
 //metodos da classe CodigoTitulo
 
 CodigoTitulo::CodigoTitulo(void){
-    this->codigo = "";
+    this->Codigo = "";
 }
 
-CodigoTitulo::CodigoTitulo(string codigo){
-    if( validar(codigo) ){
-        this->codigo = codigo;
-    }
+CodigoTitulo::CodigoTitulo(string Codigo){
+    validar(Codigo);
+    this->Codigo = Codigo;
 }
 
-bool CodigoTitulo::validar(std::string codigoTeste){
+void CodigoTitulo::validar(std::string CodigoTeste){
 
-    if(codigoTeste.length() != 11){
-        return 0;
+    if(CodigoTeste.length() != 11){
+        __throw_invalid_argument("Codigo tem comprimento inválido");
     }
 
-    std::string codigosPossiveis[6] = {"CDB", "CRA", "CRI", "LCA", "LCI", "DEB"};
-    std::string inicio = "";
-    std::string final = "";
-    bool valInicio=0, valFinal=1;
+    std::string CodigosPossiveis[6] = {"CDB", "CRA", "CRI", "LCA", "LCI", "DEB"};
+    std::string Inicio = "";
+    std::string Final = "";
+    bool ValInicio=0, ValFinal=1,Validacao;
 
-    inicio.insert(0,codigoTeste,0,3);
-    final.append(codigoTeste,3);
+    Inicio.insert(0,CodigoTeste,0,3);
+    Final.append(CodigoTeste,3);
 
     for(int i=0;i<8;i++){
-        if(inicio == codigosPossiveis[i]){
-            valInicio = 1;
+        if(Inicio == CodigosPossiveis[i]){
+            ValInicio = 1;
         }
     }
 
     for(int i=0;i<8;i++){
 
-        if(Utilities::isUpperCase(final[i]) == 0  && isdigit(final[i])==0){
-            valFinal = 0;
+        if(Utilities::isUpperCase(Final[i]) == 0  && isdigit(Final[i])==0){
+            ValFinal = 0;
         }
     }
 
-    return (valInicio && valFinal);
+    Validacao = (ValInicio && ValFinal);
+
+    if(Validacao == 0 ){
+        __throw_invalid_argument("Argumento inválido");
+    }
+
+    return;
 
 }
 
-void CodigoTitulo::setCodigoTitulo(std::string codigo){
-
-    if(validar(codigo)){
-        this->codigo = codigo;
-    }
-
+void CodigoTitulo::setCodigoTitulo(std::string Codigo){
+    validar(Codigo);
+    this->Codigo = Codigo;
 }
 
 //metodos da classe Data
 
 Data::Data(void){
-    this->data = "";
+    this->DataValor = "";
 }
 
-Data::Data(string date){
-    if( validar(date) ){
-        this->data = date;
-    }
+Data::Data(string Data){
+    validar(Data);
+    this->DataValor = Data;
 }
 
-bool Data::validar(std::string DataTeste){
+void Data::validar(std::string DataTeste){
 
     if( regex_match(DataTeste,regex("^\\d{2}[-]\\d{2}[-]\\d{4}$")) == 0){
-        return 0;
+        throw invalid_argument("Formato inválido de data");
     }
 
-    int dia,mes,ano;
-    string temp;
-    bool anoBissexto;
+    int Dia,Mes,Ano;
+    string Temp;
+    bool AnoBissexto,Validacao;
 
-    temp.assign(DataTeste,0,2);
-    dia = atoi(temp.c_str());
+    Temp.assign(DataTeste,0,2);
+    Dia = atoi(Temp.c_str());
 
-    temp.assign(DataTeste,3,2);
-    mes = atoi(temp.c_str());
+    Temp.assign(DataTeste,3,2);
+    Mes = atoi(Temp.c_str());
 
-    temp.assign(DataTeste,6,4);
-    ano = atoi(temp.c_str());
+    Temp.assign(DataTeste,6,4);
+    Ano = atoi(Temp.c_str());
 
-    if(dia<1 || dia>31){
-        return 0;
+    if(Dia<1 || Dia>31){
+        __throw_invalid_argument("Argumento inválido");
     }
 
-    if(mes<1 || mes>12){
-        return 0;
+    if(Mes<1 || Mes>12){
+        __throw_invalid_argument("Argumento inválido");
     }
 
-    if(ano<2000 || ano>2100){
-        return 0;
+    if(Ano<2000 || Ano>2100){
+        __throw_invalid_argument("Argumento inválido");
     }
 
-    anoBissexto = ( (ano-2000)%4==0 )? true : false;
+    AnoBissexto = ( (Ano-2000)%4==0 )? true : false;
 
-    if(mes == 2){
+    if(Mes == 2){
 
-        if(anoBissexto){
-            return (dia <= 29);
+        if(AnoBissexto){
+            Validacao = (Dia <= 29);
         } else {
-            return (dia <= 28);
+            Validacao = (Dia <= 28);
         }
 
-        return 1;
     }
 
-    if(mes == 4 || mes == 6 || mes == 9 || mes == 11){
-        return (dia <= 30);
+    if(Mes == 4 || Mes == 6 || Mes == 9 || Mes == 11){
+        Validacao = (Dia <= 30);
     }
 
-    return 1;
+    if(Validacao == 0){
+        __throw_invalid_argument("Argumento inválido");
+    }
 
 }
 
-void Data::setData(string data){
-
-    if(validar(data)){
-        this->data = data;
-    }    
+void Data::setData(string Data){
+    validar(Data);
+    this->DataValor = Data;
 }
 
 //metodos da classe CPF
 
 CPF::CPF(void){
-    this->CPF_value = "";
+    this->CPFValor = "";
 }
 
-CPF::CPF(string cpf){
-    if( validar(cpf) ){
-        this->CPF_value = cpf;
-    }
+CPF::CPF(string Cpf){
+    validar(Cpf);
+    this->CPFValor = Cpf;
 }
 
-bool CPF::validar(string CPFteste){
+void CPF::validar(string CPFteste){
 
     if( regex_match(CPFteste,regex("^\\d{3}[.]\\d{3}[.]\\d{3}[-]\\d{2}$")) == 0){
-        return 0;
+        __throw_invalid_argument("Formato invalido de cpf");
     }
 
-    string digitosCPF,digitosValidacao;
-    int soma,digitosCalculados[2];
+    string DigitosCPF,DigitosValidacao;
+    int Soma,DigitosCalculados[2];
+    bool Validacao=1;
 
-    digitosCPF = CPFteste.substr(0,3) + CPFteste.substr(4,3) + CPFteste.substr(8,3);
-    digitosValidacao = CPFteste.substr(12,2);
+    DigitosCPF = CPFteste.substr(0,3) + CPFteste.substr(4,3) + CPFteste.substr(8,3);
+    DigitosValidacao = CPFteste.substr(12,2);
 
-    soma = 0;
+    Soma = 0;
     for(int i=0;i<9;i++){
-        soma = soma + (10-i)*atoi(digitosCPF.substr(i,1).c_str());
+        Soma = Soma + (10-i)*atoi(DigitosCPF.substr(i,1).c_str());
     }
 
-    if( (soma%11) < 2 ){
-        digitosCalculados[0] = 0;
+    if( (Soma%11) < 2 ){
+        DigitosCalculados[0] = 0;
     } else {
-        digitosCalculados[0] = 11 - soma%11;
+        DigitosCalculados[0] = 11 - Soma%11;
     }
 
-    soma = 0;
+    Soma = 0;
         for(int i=0;i<9;i++){
-        soma = soma + (11-i)*atoi(digitosCPF.substr(i,1).c_str());
+        Soma = Soma + (11-i)*atoi(DigitosCPF.substr(i,1).c_str());
     }
-    soma = soma + 2*digitosCalculados[0];
+    Soma = Soma + 2*DigitosCalculados[0];
 
-    if( (soma%11) < 2){
-        digitosCalculados[1] = 0;
+    if( (Soma%11) < 2){
+        DigitosCalculados[1] = 0;
     } else {
-        digitosCalculados[1] = 11 - soma%11;
+        DigitosCalculados[1] = 11 - Soma%11;
     }
 
-    if(digitosCalculados[0] != atoi(digitosValidacao.substr(0,1).c_str()) || digitosCalculados[1] !=atoi(digitosValidacao.substr(1,1).c_str())){
-        return 0;
+    if(DigitosCalculados[0] != atoi(DigitosValidacao.substr(0,1).c_str()) || DigitosCalculados[1] !=atoi(DigitosValidacao.substr(1,1).c_str())){
+        Validacao = 0;
     }
 
-    return 1;
+    if(Validacao == 0){
+        __throw_invalid_argument("Argumento inválido");
+    }
 }
 
-void CPF::setCPF(string cpf){
-
-    if(validar(cpf)){
-        this->CPF_value = cpf;
-    }    
+void CPF::setCPF(string Cpf){
+    validar(Cpf);
+    this->CPFValor = Cpf;
 }
 
 //metodos da classe Utilities
 
-bool Utilities::isUpperCase(char caractere){
+bool Utilities::isUpperCase(char Caractere){
 
-    if(caractere < 'A' || caractere > 'Z'){
+    if(Caractere < 'A' || Caractere > 'Z'){
         return 0;
     }
 
