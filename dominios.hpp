@@ -6,15 +6,26 @@
 
 using namespace std;
 
-//classe Percentual
+//! Classe Percentual
+/*!
+    Armazena um valor no intervalo [0,100]
+*/
 
 class Percentual {
 
     private:
+
+        //! Valor inteiro
+        /*! Valor no intervalo [0,100]*/
         int Valor;
+        //! Função de validação
+        /*! Função que verifica se o número a ser armazenado pertence ao intervalo [0,100]*/
         void validar(int);
     public:
+        //! Função setPercentual
+        /*! Verifica se um número atende às condições da classe, caso atenda, atribui o valor à instância da classe*/
         void setPercentual(int);
+        //! função getPercentual
         int getPercentual() const;
         Percentual(void);
         Percentual(int);
@@ -84,7 +95,7 @@ inline string Setor::getSetor() const{
 
 //classe codPagamento
 
-class codPagamento {
+class CodigoPagamento {
 
     private:
         string Codigo;
@@ -92,12 +103,12 @@ class codPagamento {
     public:
         void setCodPagamento(string);
         string getCodPagamento () const;
-        codPagamento(void);
-        codPagamento(string);
+        CodigoPagamento(void);
+        CodigoPagamento(string);
 
 };
 
-inline string codPagamento::getCodPagamento() const{
+inline string CodigoPagamento::getCodPagamento() const{
     return this->Codigo;
 }
 
@@ -175,12 +186,28 @@ inline string CPF::getCPF() const{
     return this->CPFValor;
 }
 
+//classe Senha
+
+class Senha{
+    private:
+        string Senha;
+        void validar(string);
+    public:
+    void setSenha(string);
+    string getSenha() const;
+};
+
+inline string Senha::getSenha() const{
+    return this->Senha;
+}
+
 //classe Utilities
 
 class Utilities{
 
     public:
         static bool isUpperCase(char);
+        static int stringCount(string,char);
 
 };
 

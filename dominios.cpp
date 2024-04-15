@@ -122,16 +122,16 @@ void Setor::setSetor(std::string NomeSetor){
 
 //metodos da classe codPagamento
 
-codPagamento::codPagamento(void){
+CodigoPagamento::CodigoPagamento(void){
     this->Codigo = "";
 }
 
-codPagamento::codPagamento(string Codigo){
+CodigoPagamento::CodigoPagamento(string Codigo){
     validar(Codigo);
     this->Codigo = Codigo;
 }
 
-void codPagamento::validar(std::string CodigoTeste){
+void CodigoPagamento::validar(std::string CodigoTeste){
 
     if(CodigoTeste.length() != 8){
         __throw_invalid_argument("Comprimento do código inválido, deve ter comprimento igual a 8");
@@ -151,7 +151,7 @@ return;
 
 }
 
-void codPagamento::setCodPagamento(std::string Codigo){
+void CodigoPagamento::setCodPagamento(std::string Codigo){
     validar(Codigo);
     this->Codigo = Codigo;
 }
@@ -412,6 +412,61 @@ void CPF::setCPF(string Cpf){
     this->CPFValor = Cpf;
 }
 
+//metodos da classe Senha
+
+void Senha::setSenha(string senhaTeste){
+    validar(senhaTeste);
+    this->Senha = senhaTeste;
+}
+
+void Senha::validar(string senhaTeste){
+
+    int verificaSequencia = 0;
+
+    if(senhaTeste.length()!=6){
+        __throw_invalid_argument("Tamanho de senha invalido");
+    }
+
+    for(int i = 0;i<6;i++){
+        if(isdigit(senhaTeste[i])==0){
+            __throw_invalid_argument("caractere invalido detectado");
+        }
+    }
+
+    if(senhaTeste[0]=='0'){
+        __throw_invalid_argument("primeiro caractere de senha não pode ser zero");
+    }
+
+    for(char i = '0'; i<='9';i++){
+        if(Utilities::stringCount(senhaTeste,i)>1){
+            __throw_invalid_argument("caractere repetido detectado");
+        }
+    }
+
+    for(int i = 0; i<5;i++){
+        if(senhaTeste[i+1] > senhaTeste[i] ){
+            verificaSequencia++;
+        }
+    }
+    if(verificaSequencia == 5){
+        __throw_invalid_argument("sequencia nao pode ser crescente");
+    }
+
+    verificaSequencia = 0;
+    for(int i = 0; i<5;i++){
+        if(senhaTeste[i+1] < senhaTeste[i] ){
+            verificaSequencia++;
+        }
+    }
+    if(verificaSequencia == 5){
+        __throw_invalid_argument("sequencia nao pode ser crescente");
+    }
+
+    return;
+
+}
+
+
 //metodos da classe Utilities
 
 bool Utilities::isUpperCase(char Caractere){
@@ -422,4 +477,15 @@ bool Utilities::isUpperCase(char Caractere){
 
     return 1;
 
+}
+
+int Utilities::stringCount(string stringao, char caractere){
+    int soma = 0;
+    int i;
+    for(i = 0;i<stringao.length();i++){
+        if(stringao[i]==caractere){
+            soma++;
+        }
+    }
+    return soma;
 }

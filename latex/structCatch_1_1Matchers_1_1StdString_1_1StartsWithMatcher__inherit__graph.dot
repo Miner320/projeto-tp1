@@ -1,0 +1,16 @@
+digraph "Catch::Matchers::StdString::StartsWithMatcher"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Catch::Matchers::StdString\l::StartsWithMatcher",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Catch::Matchers::StdString\l::StringMatcherBase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structCatch_1_1Matchers_1_1StdString_1_1StringMatcherBase.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Catch::Matchers::Impl\l::MatcherBase\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structCatch_1_1Matchers_1_1Impl_1_1MatcherBase.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Catch::Matchers::Impl\l::MatcherUntypedBase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCatch_1_1Matchers_1_1Impl_1_1MatcherUntypedBase.html",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Catch::Matchers::Impl\l::MatcherMethod\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structCatch_1_1Matchers_1_1Impl_1_1MatcherMethod.html",tooltip=" "];
+}

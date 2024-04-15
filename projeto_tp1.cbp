@@ -35,6 +35,8 @@
 		<Unit filename="catch.hpp" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.hpp" />
+		<Unit filename="entidades.cpp" />
+		<Unit filename="entidades.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>

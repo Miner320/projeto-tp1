@@ -81,7 +81,7 @@ using namespace std;
 
     TEST_CASE("validacao de codigo de pagamento", "[codPagamento]"){
 
-        codPagamento t1;
+        CodigoPagamento t1;
 
         REQUIRE(t1.getCodPagamento().compare("")==0);
 
@@ -190,5 +190,29 @@ using namespace std;
         t1.setCPF("083.422.731-21");
 
         REQUIRE(t1.getCPF()=="083.422.731-21");
+
+    }
+
+    TEST_CASE("validacao de senha","[senha]"){
+
+        Senha t1;
+
+        CHECK_THROWS(t1.setSenha("10458654"));
+
+        CHECK_THROWS(t1.setSenha("02978a"));
+
+        CHECK_THROWS(t1.setSenha("115902"));
+
+        CHECK_THROWS(t1.setSenha("987521"));
+
+        CHECK_THROWS(t1.setSenha("145789"));
+
+        t1.setSenha("178653");
+
+        REQUIRE(t1.getSenha()=="178653");
+
+        t1.setSenha("968452");
+
+        REQUIRE(t1.getSenha()=="968452");
 
     }
