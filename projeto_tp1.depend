@@ -704,7 +704,7 @@
 	<stdexcept>
 	<string>
 
-1713181985 source:/home/pedro/source/tp1/projeto_tp1/main.cpp
+1713182130 source:/home/pedro/source/tp1/projeto_tp1/main.cpp
 	"dominios.hpp"
 	"catch.hpp"
 	<string>
@@ -1003,4 +1003,11 @@
 	<algorithm>
 	<iomanip>
 	<cassert>
+
+1713220952 source:/home/pedro/source/tp1/projeto_tp1/entidades.cpp
+	"dominios.hpp"
+	"entidades.hpp"
+
+1713221353 /home/pedro/source/tp1/projeto_tp1/entidades.hpp
+	"dominios.hpp"
 

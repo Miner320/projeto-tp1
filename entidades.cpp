@@ -11,12 +11,12 @@ CPF Conta::getCpf() const{
     return this->Cpf;
 }
 
-void Conta::setNome(Nome nome){
-    this->Name = nome;
+void Conta::setNome(class Nome nome){
+    this->Nome = nome;
 }
 
 Nome Conta::getNome() const{
-    return this->Name;
+    return this->Nome;
 }
 
 //metodos de titulo
@@ -37,12 +37,12 @@ Nome Titulo::getEmissor() const{
     return this->Emissor;
 }
 
-void Titulo::setSetor(Setor setor){
-    this->Sector = setor;
+void Titulo::setSetor(class::Setor setor){
+    this->Setor = setor;
 }
 
 Setor Titulo::getSetor() const{
-    return this->Sector;
+    return this->Setor;
 }
 
 void Titulo::setEmissao(Data data){

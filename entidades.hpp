@@ -7,24 +7,24 @@ using namespace std;
 
 class Conta{
     private:
-        CPF Cpf;
-        Nome Name;
+        class::CPF Cpf;
+        class::Nome Nome;
         
     public:
         void setCpf(CPF);
         CPF getCpf() const;
-        void setNome(Nome);
-        Nome getNome() const;
+        void setNome(class::Nome);
+        class::Nome getNome() const;
 };
 
 class Titulo{
     private:
-        CodigoTitulo Codigo;
-        Nome Emissor;
-        Setor Sector;
-        Data Emissao;
-        Data Vencimento;
-        Dinheiro Valor;
+        class::CodigoTitulo Codigo;
+        class::Nome Emissor;
+        class::Setor Setor;
+        class::Data Emissao;
+        class::Data Vencimento;
+        class::Dinheiro Valor;
     public:
         void setCodigoTitulo(CodigoTitulo);
         CodigoTitulo getCodigoTitulo() const;
@@ -32,8 +32,8 @@ class Titulo{
         void setEmissor(Nome);
         Nome getEmissor() const;
 
-        void setSetor(Setor);
-        Setor getSetor() const;
+        void setSetor(class::Setor);
+        class::Setor getSetor() const;
 
         void setEmissao(Data);
         Data getEmissao() const;
@@ -47,10 +47,10 @@ class Titulo{
 
 class Pagamento{
     private:
-        CodigoPagamento Codigo;
-        Data Date;
-        Percentual Percent;
-        Estado State;
+        class::CodigoPagamento Codigo;
+        class::Data Date;
+        class::Percentual Percent;
+        class::Estado State;
     public:
         void setCodigoPagamento(CodigoPagamento);
         CodigoPagamento getCodigoPagamento() const;
