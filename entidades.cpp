@@ -79,28 +79,28 @@ CodigoPagamento Pagamento::getCodigoPagamento() const{
     return this->Codigo;
 }
 
-void Pagamento::setData(Data data){
-    this->Date = data;
+void Pagamento::setData(class::Data data){
+    this->Data = data;
 }
 
 Data Pagamento::getData() const{
-    return this->Date;
+    return this->Data;
 }
 
-void Pagamento::setPercentual(Percentual percentual){
-    this->Percent = percentual;
+void Pagamento::setPercentual(class::Percentual percentual){
+    this->Percentual = percentual;
 }
 
 Percentual Pagamento::getPercentual() const{
-    return this->Percent;
+    return this->Percentual;
 }
 
-void Pagamento::setEstado(Estado estado){
-    this->State = estado;
+void Pagamento::setEstado(class::Estado estado){
+    this->Estado = estado;
 }
 
 Estado Pagamento::getEstado() const{
-    return this->State;
+    return this->Estado;
 }
 
 

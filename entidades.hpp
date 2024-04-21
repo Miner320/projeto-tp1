@@ -48,21 +48,21 @@ class Titulo{
 class Pagamento{
     private:
         class::CodigoPagamento Codigo;
-        class::Data Date;
-        class::Percentual Percent;
-        class::Estado State;
+        class::Data Data;
+        class::Percentual Percentual;
+        class::Estado Estado;
     public:
         void setCodigoPagamento(CodigoPagamento);
         CodigoPagamento getCodigoPagamento() const;
 
-        void setData(Data);
-        Data getData() const;
+        void setData(class::Data);
+        class::Data getData() const;
 
-        void setPercentual(Percentual);
-        Percentual getPercentual() const;
+        void setPercentual(class::Percentual);
+        class::Percentual getPercentual() const;
 
-        void setEstado(Estado);
-        Estado getEstado() const;
+        void setEstado(class::Estado);
+        class::Estado getEstado() const;
 };
 
 
