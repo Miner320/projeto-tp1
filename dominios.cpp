@@ -344,6 +344,8 @@ void Data::validar(std::string DataTeste){
         __throw_invalid_argument("Argumento inválido");
     }
 
+    return;
+
 }
 
 void Data::setData(string Data){
