@@ -416,9 +416,18 @@ void CPF::setCPF(string Cpf){
 
 //metodos da classe Senha
 
+Senha::Senha(void){
+    this->SenhaArmazenada = "";
+}
+
+Senha::Senha(string SenhaTeste){
+    validar(SenhaTeste);
+    this->SenhaArmazenada = SenhaTeste;
+}
+
 void Senha::setSenha(string senhaTeste){
     validar(senhaTeste);
-    this->Senha = senhaTeste;
+    this->SenhaArmazenada = senhaTeste;
 }
 
 void Senha::validar(string senhaTeste){

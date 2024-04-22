@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="codPagamento",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcodPagamento.html",tooltip=" "];
+  Node0 [label="CodigoTitulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCodigoTitulo.html",tooltip="Classe CodigoTitulo."];
 }
