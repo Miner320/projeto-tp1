@@ -22,12 +22,23 @@ string \mbox{\hyperlink{classSenha_a1cc904431d0a8287d0b22dee3e9d34ae}{get\+Senha
 \mbox{\Hypertarget{classSenha_a9f4ad62d7b5add66ec2647eb3b2aef6f}\label{classSenha_a9f4ad62d7b5add66ec2647eb3b2aef6f}} 
 \mbox{\hyperlink{classSenha_a9f4ad62d7b5add66ec2647eb3b2aef6f}{Senha}} (string)
 \begin{DoxyCompactList}\small\item\em Construtor que designa uma string à instância de \mbox{\hyperlink{classSenha}{Senha}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSenha_a9961740841bf2a8993a6dac0799a8537}\label{classSenha_a9961740841bf2a8993a6dac0799a8537}} 
+string {\bfseries Senha\+Armazenada}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Classe \mbox{\hyperlink{classSenha}{Senha}}. 
 
-Armazena uma senha que segue as seguintes condições 
+Armazena uma senha que segue as seguintes condições\+:~\newline
+ {\bfseries{XXXXXX}}~\newline
+ -\/X é dígito~\newline
+ -\/Não há digito duplicado~\newline
+ -\/Primeiro dígito é diferente de zero~\newline
+ -\/Sequência não pode ser crescente e nem decrescente 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classSenha_a1cc904431d0a8287d0b22dee3e9d34ae}\label{classSenha_a1cc904431d0a8287d0b22dee3e9d34ae}} 
@@ -40,7 +51,12 @@ Armazena uma senha que segue as seguintes condições
 
 Função get\+Senha. 
 
-Retorna a string armazenada pela instância de \mbox{\hyperlink{classSenha}{Senha}} \mbox{\Hypertarget{classSenha_a735e4bf5f65cc8d28daa7dbf202fd999}\label{classSenha_a735e4bf5f65cc8d28daa7dbf202fd999}} 
+Retorna a string armazenada pela instância de \mbox{\hyperlink{classSenha}{Senha}}
+
+\begin{DoxyReturn}{Returns}
+string armazenada na instância da classe \mbox{\hyperlink{classSenha}{Senha}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSenha_a735e4bf5f65cc8d28daa7dbf202fd999}\label{classSenha_a735e4bf5f65cc8d28daa7dbf202fd999}} 
 \index{Senha@{Senha}!setSenha@{setSenha}}
 \index{setSenha@{setSenha}!Senha@{Senha}}
 \doxysubsubsection{\texorpdfstring{setSenha()}{setSenha()}}
@@ -50,7 +66,14 @@ Retorna a string armazenada pela instância de \mbox{\hyperlink{classSenha}{Senh
 
 Função get\+Senha. 
 
-Verifica se uma string atende às condições de validação de \mbox{\hyperlink{classSenha}{Senha}}, caso atenda, armazena a string na instância de \mbox{\hyperlink{classSenha}{Senha}} 
+Verifica se uma string atende às condições de validação de \mbox{\hyperlink{classSenha}{Senha}}, caso atenda, armazena a string na instância de \mbox{\hyperlink{classSenha}{Senha}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Senha\+Teste} & string que passará por verificação de validade \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

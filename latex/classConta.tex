@@ -1,20 +1,96 @@
 \hypertarget{classConta}{}\doxysection{Conta Class Reference}
 \label{classConta}\index{Conta@{Conta}}
+
+
+Classe \mbox{\hyperlink{classConta}{Conta}}.  
+
+
+
+
+{\ttfamily \#include $<$entidades.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classConta_ab1504a2ceb7b7b8a4289cddda9ba551c}\label{classConta_ab1504a2ceb7b7b8a4289cddda9ba551c}} 
-void {\bfseries set\+Cpf} (\mbox{\hyperlink{classCPF}{CPF}})
+void \mbox{\hyperlink{classConta_ab1504a2ceb7b7b8a4289cddda9ba551c}{set\+Cpf}} (\mbox{\hyperlink{classCPF}{CPF}})
+\begin{DoxyCompactList}\small\item\em Define membro \mbox{\hyperlink{classCPF}{CPF}} presente na instância. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCPF}{CPF}} \mbox{\hyperlink{classConta_a3d5e13d0198fc0eb5c249ff3c3ef3ee0}{get\+Cpf}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o objeto \mbox{\hyperlink{classCPF}{CPF}} presente na instância. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConta_a193d660800bb4feaebb296d6789faeab}{set\+Nome}} (class\+::\+Nome)
+\begin{DoxyCompactList}\small\item\em Define o membro \mbox{\hyperlink{classNome}{Nome}} presente na instância. \end{DoxyCompactList}\item 
+class\+::\+Nome \mbox{\hyperlink{classConta_aac660b7dd90148ff41f89f3732f0d52b}{get\+Nome}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o objeto \mbox{\hyperlink{classNome}{Nome}} presente na instância. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classConta_a957bb92b71c2326e1182bd1832824b1f}\label{classConta_a957bb92b71c2326e1182bd1832824b1f}} 
+class\+::\+CPF \mbox{\hyperlink{classConta_a957bb92b71c2326e1182bd1832824b1f}{Cpf}}
+\begin{DoxyCompactList}\small\item\em Objeto da classe \mbox{\hyperlink{classCPF}{CPF}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConta_abe7350795d52bd9fa5470291583b5f2a}\label{classConta_abe7350795d52bd9fa5470291583b5f2a}} 
+class\+::\+Nome \mbox{\hyperlink{classConta_abe7350795d52bd9fa5470291583b5f2a}{Nome}}
+\begin{DoxyCompactList}\small\item\em Objeto da classe \mbox{\hyperlink{classNome}{Nome}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe \mbox{\hyperlink{classConta}{Conta}}. 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classConta_a3d5e13d0198fc0eb5c249ff3c3ef3ee0}\label{classConta_a3d5e13d0198fc0eb5c249ff3c3ef3ee0}} 
-\mbox{\hyperlink{classCPF}{CPF}} {\bfseries get\+Cpf} () const
-\item 
-\mbox{\Hypertarget{classConta_a193d660800bb4feaebb296d6789faeab}\label{classConta_a193d660800bb4feaebb296d6789faeab}} 
-void {\bfseries set\+Nome} (class\+::\+Nome)
-\item 
+\index{Conta@{Conta}!getCpf@{getCpf}}
+\index{getCpf@{getCpf}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{getCpf()}{getCpf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCPF}{CPF}} Conta\+::get\+Cpf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna o objeto \mbox{\hyperlink{classCPF}{CPF}} presente na instância. 
+
+\begin{DoxyReturn}{Returns}
+objeto da classe \mbox{\hyperlink{classCPF}{CPF}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classConta_aac660b7dd90148ff41f89f3732f0d52b}\label{classConta_aac660b7dd90148ff41f89f3732f0d52b}} 
-class\+::\+Nome {\bfseries get\+Nome} () const
-\end{DoxyCompactItemize}
+\index{Conta@{Conta}!getNome@{getNome}}
+\index{getNome@{getNome}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{getNome()}{getNome()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNome}{Nome}} Conta\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna o objeto \mbox{\hyperlink{classNome}{Nome}} presente na instância. 
+
+\begin{DoxyReturn}{Returns}
+objeto da classe \mbox{\hyperlink{classNome}{Nome}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConta_ab1504a2ceb7b7b8a4289cddda9ba551c}\label{classConta_ab1504a2ceb7b7b8a4289cddda9ba551c}} 
+\index{Conta@{Conta}!setCpf@{setCpf}}
+\index{setCpf@{setCpf}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{setCpf()}{setCpf()}}
+{\footnotesize\ttfamily void Conta\+::set\+Cpf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCPF}{CPF}}}]{cpf }\end{DoxyParamCaption})}
+
+
+
+Define membro \mbox{\hyperlink{classCPF}{CPF}} presente na instância. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classCPF}{CPF}}} & objeto da classe \mbox{\hyperlink{classCPF}{CPF}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classConta_a193d660800bb4feaebb296d6789faeab}\label{classConta_a193d660800bb4feaebb296d6789faeab}} 
+\index{Conta@{Conta}!setNome@{setNome}}
+\index{setNome@{setNome}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{setNome()}{setNome()}}
+{\footnotesize\ttfamily void Conta\+::set\+Nome (\begin{DoxyParamCaption}\item[{class\+::\+Nome}]{ }\end{DoxyParamCaption})}
+
+
+
+Define o membro \mbox{\hyperlink{classNome}{Nome}} presente na instância. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classNome}{Nome}}} & objeto da classe \mbox{\hyperlink{classNome}{Nome}} \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

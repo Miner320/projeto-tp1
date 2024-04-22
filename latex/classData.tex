@@ -22,12 +22,22 @@ string \mbox{\hyperlink{classData_a13f25eafdc138d743e99eb4086d765a2}{get\+Data}}
 \mbox{\Hypertarget{classData_a7e546a6e6e55f93cb621011dff413f00}\label{classData_a7e546a6e6e55f93cb621011dff413f00}} 
 \mbox{\hyperlink{classData_a7e546a6e6e55f93cb621011dff413f00}{Data}} (string)
 \begin{DoxyCompactList}\small\item\em Construtor que designa uma string à instância de \mbox{\hyperlink{classData}{Data}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classData_a7369d35d0cb77533db9cbd6c33401a7a}\label{classData_a7369d35d0cb77533db9cbd6c33401a7a}} 
+string {\bfseries Data\+Valor}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Classe \mbox{\hyperlink{classData}{Data}}. 
 
-Armazena uma data com as seguintes condições 
+Armazena uma data com as seguintes condições\+:~\newline
+ {\bfseries{DD-\/\+MM-\/\+AAAA}}~\newline
+ -\/DD vai de 00 a 31~\newline
+ -\/MM vai de 01 a 12~\newline
+ -\/AAAA vai de 2000 a 2100 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classData_a13f25eafdc138d743e99eb4086d765a2}\label{classData_a13f25eafdc138d743e99eb4086d765a2}} 
@@ -40,7 +50,12 @@ Armazena uma data com as seguintes condições
 
 Função get\+Data. 
 
-Retorna a string armazenada pela instância de \mbox{\hyperlink{classData}{Data}} \mbox{\Hypertarget{classData_a75a50f88bc966f20826a3959717a5acc}\label{classData_a75a50f88bc966f20826a3959717a5acc}} 
+Retorna a string armazenada pela instância de \mbox{\hyperlink{classData}{Data}}
+
+\begin{DoxyReturn}{Returns}
+string armazenada na instância da classe \mbox{\hyperlink{classData}{Data}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classData_a75a50f88bc966f20826a3959717a5acc}\label{classData_a75a50f88bc966f20826a3959717a5acc}} 
 \index{Data@{Data}!setData@{setData}}
 \index{setData@{setData}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{setData()}{setData()}}
@@ -50,7 +65,14 @@ Retorna a string armazenada pela instância de \mbox{\hyperlink{classData}{Data}
 
 Função set\+Data. 
 
-Verifica se uma string atende às condições de validação de \mbox{\hyperlink{classData}{Data}}, caso atenda, armazena a string na instância de \mbox{\hyperlink{classData}{Data}} 
+Verifica se uma string atende às condições de validação de \mbox{\hyperlink{classData}{Data}}, caso atenda, armazena a string na instância de \mbox{\hyperlink{classData}{Data}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data\+Teste} & string que passará por verificação de validade \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

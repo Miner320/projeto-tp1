@@ -22,12 +22,21 @@ string \mbox{\hyperlink{classCPF_aeb357affce8c8a36cd9c778e6a37c806}{get\+CPF}} (
 \mbox{\Hypertarget{classCPF_a6f0dbd762b808f22fce419d664fef9ea}\label{classCPF_a6f0dbd762b808f22fce419d664fef9ea}} 
 \mbox{\hyperlink{classCPF_a6f0dbd762b808f22fce419d664fef9ea}{CPF}} (string)
 \begin{DoxyCompactList}\small\item\em Construtor que designa uma string à instância de \mbox{\hyperlink{classCPF}{CPF}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCPF_a6a94c3c3eef21c40d9d6d4bb197e213f}\label{classCPF_a6a94c3c3eef21c40d9d6d4bb197e213f}} 
+string {\bfseries CPFValor}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Classe \mbox{\hyperlink{classCPF}{CPF}}. 
 
-Classe que armazena um \mbox{\hyperlink{classCPF}{CPF}} no seguinte formato 
+Classe que armazena um \mbox{\hyperlink{classCPF}{CPF}} no seguinte formato\+:~\newline
+ {\bfseries{XXX.\+XXX.\+XXX-\/CC}}~\newline
+ -\/X é dígito~\newline
+ -\/CC são dígitos de validação calculados segundo algoritmo de validação de \mbox{\hyperlink{classCPF}{CPF}} 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classCPF_aeb357affce8c8a36cd9c778e6a37c806}\label{classCPF_aeb357affce8c8a36cd9c778e6a37c806}} 
@@ -40,7 +49,12 @@ Classe que armazena um \mbox{\hyperlink{classCPF}{CPF}} no seguinte formato
 
 Função get\+CPF. 
 
-Retorna a string armazenada pela instância de \mbox{\hyperlink{classCPF}{CPF}} \mbox{\Hypertarget{classCPF_a69e15232d308c375c88be1d48cf44dfc}\label{classCPF_a69e15232d308c375c88be1d48cf44dfc}} 
+Retorna a string armazenada pela instância de \mbox{\hyperlink{classCPF}{CPF}}
+
+\begin{DoxyReturn}{Returns}
+string armazenada na instância da classe \mbox{\hyperlink{classCPF}{CPF}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCPF_a69e15232d308c375c88be1d48cf44dfc}\label{classCPF_a69e15232d308c375c88be1d48cf44dfc}} 
 \index{CPF@{CPF}!setCPF@{setCPF}}
 \index{setCPF@{setCPF}!CPF@{CPF}}
 \doxysubsubsection{\texorpdfstring{setCPF()}{setCPF()}}
@@ -50,7 +64,14 @@ Retorna a string armazenada pela instância de \mbox{\hyperlink{classCPF}{CPF}} 
 
 Função set\+CPF. 
 
-Verifica se uma string atende às condições de validação de \mbox{\hyperlink{classCPF}{CPF}}, caso atenda, armazena a string na instância de \mbox{\hyperlink{classCPF}{CPF}} 
+Verifica se uma string atende às condições de validação de \mbox{\hyperlink{classCPF}{CPF}}, caso atenda, armazena a string na instância de \mbox{\hyperlink{classCPF}{CPF}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em CPFTeste} & string que passará por verificação de validade \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

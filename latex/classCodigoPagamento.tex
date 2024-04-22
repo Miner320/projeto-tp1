@@ -22,12 +22,21 @@ string \mbox{\hyperlink{classCodigoPagamento_a15a97c0033460f16acc33000bb88e904}{
 \mbox{\Hypertarget{classCodigoPagamento_ad286fe7ced34bceb7c4863864863ff3a}\label{classCodigoPagamento_ad286fe7ced34bceb7c4863864863ff3a}} 
 \mbox{\hyperlink{classCodigoPagamento_ad286fe7ced34bceb7c4863864863ff3a}{Codigo\+Pagamento}} (string)
 \begin{DoxyCompactList}\small\item\em Construtor que designa uma string à instância da classe \mbox{\hyperlink{classCodigoPagamento}{Codigo\+Pagamento}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCodigoPagamento_ab10022cec820ad3c73ef0432a7090013}\label{classCodigoPagamento_ab10022cec820ad3c73ef0432a7090013}} 
+string {\bfseries Codigo}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Classe \mbox{\hyperlink{classCodigoPagamento}{Codigo\+Pagamento}}. 
 
-Armazena um código de pagamento 
+Armazena um código de pagamento no seguinte formato\+:~\newline
+ {\bfseries{XXXXXXXX}}~\newline
+ -\/X é dígito~\newline
+ -\/Primeiro dígito é diferente de zero 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classCodigoPagamento_a15a97c0033460f16acc33000bb88e904}\label{classCodigoPagamento_a15a97c0033460f16acc33000bb88e904}} 
@@ -40,7 +49,12 @@ Armazena um código de pagamento
 
 Função get\+Cod\+Pagamento. 
 
-Retorna a string armazenada pela instância de \mbox{\hyperlink{classCodigoPagamento}{Codigo\+Pagamento}} \mbox{\Hypertarget{classCodigoPagamento_adc98fb95fda89afa36fe16f74215f077}\label{classCodigoPagamento_adc98fb95fda89afa36fe16f74215f077}} 
+Retorna a string armazenada pela instância de \mbox{\hyperlink{classCodigoPagamento}{Codigo\+Pagamento}}
+
+\begin{DoxyReturn}{Returns}
+String armazenada na instância da classe \mbox{\hyperlink{classCodigoPagamento}{Codigo\+Pagamento}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCodigoPagamento_adc98fb95fda89afa36fe16f74215f077}\label{classCodigoPagamento_adc98fb95fda89afa36fe16f74215f077}} 
 \index{CodigoPagamento@{CodigoPagamento}!setCodPagamento@{setCodPagamento}}
 \index{setCodPagamento@{setCodPagamento}!CodigoPagamento@{CodigoPagamento}}
 \doxysubsubsection{\texorpdfstring{setCodPagamento()}{setCodPagamento()}}
@@ -50,7 +64,14 @@ Retorna a string armazenada pela instância de \mbox{\hyperlink{classCodigoPagam
 
 Função set\+Cod\+Pagamento. 
 
-Verifica se uma string atende às condições de validação de \mbox{\hyperlink{classCodigoPagamento}{Codigo\+Pagamento}}, caso atenda, armazena a string na instância de \mbox{\hyperlink{classCodigoPagamento}{Codigo\+Pagamento}} 
+Verifica se uma string atende às condições de validação de \mbox{\hyperlink{classCodigoPagamento}{Codigo\+Pagamento}}, caso atenda, armazena a string na instância de \mbox{\hyperlink{classCodigoPagamento}{Codigo\+Pagamento}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em Codigo\+Teste} & string que passará por verificação de validade \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
