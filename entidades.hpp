@@ -20,7 +20,7 @@ class Conta{
         void setCpf(CPF);
         //! Retorna o objeto CPF presente na instância
         /*! @return objeto da classe CPF*/
-        CPF getCpf() const;
+        class::CPF getCpf() const;
         //! Define o membro Nome presente na instância
         /*! @param Nome objeto da classe Nome*/
         void setNome(class::Nome);
@@ -51,13 +51,13 @@ class Titulo{
         void setCodigoTitulo(CodigoTitulo);
         //! Retorna o atributo Codigo presente na instância da classe
         /*! @return objeto da classe CodigoTitulo*/
-        CodigoTitulo getCodigoTitulo() const;
+        class::CodigoTitulo getCodigoTitulo() const;
         //! Define o atributo Emissor presente na instância da classe
         /*! @param Emissor objeto da classe Nome*/
         void setEmissor(Nome);
         /*! Retorna o atributo emissor presente na instância*/
         /*! @return objeto da classe Nome*/
-        Nome getEmissor() const;
+        class::Nome getEmissor() const;
         //! Define o atributo Setor presente na instância
         /*! @param Setor objeto da classe Setor*/
         void setSetor(class::Setor);
@@ -69,13 +69,13 @@ class Titulo{
         void setEmissao(Data);
         //! Retorna o atributo Emissao presente na instância
         /*! @return objeto da classe Data*/
-        Data getEmissao() const;
+        class::Data getEmissao() const;
         //! Define o atributo Vencimento presente na instância
         /*! @param Vencimento objeto da classe Data*/
         void setVencimento(Data);
         //! Retorna o atributo Vencimento presente na instância
         /*! @return objeto da classe Data*/
-        Data getVencimento() const;
+        class::Data getVencimento() const;
         //! Define o atributo Valor presente na instância
         /*! @param Valor objeto da classe Dinheiro*/
         void setValor(Dinheiro);
@@ -102,7 +102,7 @@ class Pagamento{
         void setCodigoPagamento(CodigoPagamento);
         //! Retorna o atributo Codigo presente na instância
         /*! @return objeto da classe CodigoPagamento*/
-        CodigoPagamento getCodigoPagamento() const;
+        class::CodigoPagamento getCodigoPagamento() const;
         //! Define o atributo Data presente na instância
         /*! @param Data objeto da classe Data*/
         void setData(class::Data);
@@ -122,8 +122,6 @@ class Pagamento{
         /*! @return objeto da classe Estado*/
         class::Estado getEstado() const;
 };
-
-
 
 
 #endif
