@@ -430,3 +430,148 @@ int TUSenha::run(){
     return Validade;
 }
 
+//metodos de TUConta
+
+void TUConta::setUp(){
+    conta = new Conta;
+    Validade = Sucesso;
+}
+
+void TUConta::tearDown(){
+    delete conta;
+}
+
+void TUConta::testarCenarioSucesso(){
+    CPF Cpf;
+    Cpf.setCPF(ValorValidoCpf);
+    conta->setCpf(Cpf);
+    if(conta->getCpf().getCPF() != ValorValidoCpf){
+        Validade = Falha;
+    }
+
+    Nome Nome;
+    Nome.setNome(ValorValidoNome);
+    conta->setNome(Nome);
+    if(conta->getNome().getNome() != ValorValidoNome){
+        Validade = Falha;
+    }
+}
+
+int TUConta::run(){
+    setUp();
+    testarCenarioSucesso();
+    tearDown();
+    return Validade;
+}
+
+//metodos de TUTitulo
+
+void TUTitulo::setUp(){
+    titulo = new Titulo;
+    Validade = Sucesso;
+}
+
+void TUTitulo::tearDown(){
+    delete titulo;
+}
+
+void TUTitulo::testarCenarioSucesso(){
+    CodigoTitulo Codigo;
+    Codigo.setCodigoTitulo(ValorValidoCodigo);
+    titulo->setCodigoTitulo(Codigo);
+    if(titulo->getCodigoTitulo().getCodigoTitulo() != ValorValidoCodigo){
+        Validade = Falha;
+    }
+
+    Nome Emissor;
+    Emissor.setNome(ValorValidoEmissor);
+    titulo->setEmissor(Emissor);
+    if(titulo->getEmissor().getNome() != ValorValidoEmissor){
+        Validade = Falha;
+    }
+
+    Setor Setor;
+    Setor.setSetor(ValorValidoSetor);
+    titulo->setSetor(Setor);
+    if(titulo->getSetor().getSetor() != ValorValidoSetor){
+        Validade = Falha;
+    }
+    
+    Data Emissao;
+    Emissao.setData(ValorValidoEmissao);
+    titulo->setEmissao(Emissao);
+    if(titulo->getEmissao().getData() != ValorValidoEmissao){
+        Validade = Falha;
+    }
+
+    Data Vencimento;
+    Vencimento.setData(ValorValidoVencimento);
+    titulo->setVencimento(Vencimento);
+    if(titulo->getVencimento().getData() != ValorValidoVencimento){
+        Validade = Falha;
+    }
+    
+    Dinheiro Valor;
+    Valor.setDinheiro(ValorValidoValor);
+    titulo->setValor(Valor);
+    if(titulo->getValor().getDinheiro() != ValorValidoValor){
+        Validade = Falha;
+    }
+
+}
+
+int TUTitulo::run(){
+    setUp();
+    testarCenarioSucesso();
+    tearDown();
+    return Validade;
+}
+
+//metodos de TUPagamento
+
+void TUPagamento::setUp(){
+    pagamento = new Pagamento;
+    Validade = Sucesso;
+}
+
+void TUPagamento::tearDown(){
+    delete pagamento;
+}
+
+void TUPagamento::testarCenarioSucesso(){
+    CodigoPagamento codigo;
+    codigo.setCodPagamento(ValorValidoCodigo);
+    pagamento->setCodigoPagamento(codigo);
+    if(pagamento->getCodigoPagamento().getCodPagamento() != ValorValidoCodigo){
+        Validade = Falha;
+    }
+
+    Data data;
+    data.setData(ValorValidoData);
+    pagamento->setData(data);
+    if(pagamento->getData().getData() != ValorValidoData){
+        Validade = Falha;
+    }
+
+    Percentual Percentual;
+    Percentual.setPercentual(ValorValidoPercentual);
+    pagamento->setPercentual(Percentual);
+    if(pagamento->getPercentual().getPercentual() != ValorValidoPercentual){
+        Validade = Falha;
+    }
+
+    Estado Estado;
+    Estado.setEstado(ValorValidoEstado);
+    pagamento->setEstado(Estado);
+    if(pagamento->getEstado().getEstado() != ValorValidoEstado){
+        Validade = Falha;
+    }
+
+}
+
+int TUPagamento::run(){
+    setUp();
+    testarCenarioSucesso();
+    tearDown();
+    return Validade;
+}

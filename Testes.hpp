@@ -201,10 +201,76 @@ private:
     void testarCenarioSucesso();
     void testarCenarioFalha();
 
-   public:
+public:
     const static int Sucesso = 1;
     const static int Falha = 0;
     int run();
+};
+
+//Teste da entidade Conta
+
+class TUConta{
+
+private:
+    inline const static string ValorValidoCpf = "111.444.777-35";
+    inline const static string ValorValidoNome = "John Travolta";
+    Conta *conta;
+    int Validade;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+
+public:
+    const static int Sucesso = 1;
+    const static int Falha = 0;
+    int run();
+
+};
+
+//Teste da entidade Titulo
+
+class TUTitulo{
+
+private:
+    inline const static string ValorValidoCodigo = "CDB12345678";
+    inline const static string ValorValidoEmissor = "John Travolta";
+    inline const static string ValorValidoSetor = "Energia";
+    inline const static string ValorValidoEmissao = "01-12-2012";
+    inline const static string ValorValidoVencimento = "05-12-2013";
+    inline const static float ValorValidoValor = 500;
+    Titulo *titulo;
+    int Validade;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+
+public:
+    const static int Sucesso = 1;
+    const static int Falha = 0;
+    int run();
+
+};
+
+//Teste da entidade Pagamento
+
+class TUPagamento{
+
+private:
+    inline const static string ValorValidoCodigo = "12345678";
+    inline const static string ValorValidoData = "12-06-2001";
+    inline const static int ValorValidoPercentual = 20;
+    inline const static string ValorValidoEstado = "Inadimplente";
+    Pagamento *pagamento;
+    int Validade;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+
+public:
+    const static int Sucesso = 1;
+    const static int Falha = 0;
+    int run();
+
 };
 
 #endif
