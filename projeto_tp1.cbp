@@ -32,14 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Testes.cpp" />
-		<Unit filename="Testes.hpp" />
 		<Unit filename="catch.hpp" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.hpp" />
 		<Unit filename="entidades.cpp" />
 		<Unit filename="entidades.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="testes.cpp" />
+		<Unit filename="testes.hpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

@@ -694,7 +694,7 @@
 	<string>
 	<cctype>
 
-1713182049 source:/home/pedro/source/tp1/projeto_tp1/dominios.cpp
+1713787323 source:/home/pedro/source/tp1/projeto_tp1/dominios.cpp
 	"dominios.hpp"
 	<string>
 	<regex>
@@ -704,10 +704,11 @@
 	<stdexcept>
 	<string>
 
-1713182130 source:/home/pedro/source/tp1/projeto_tp1/main.cpp
+1713966904 source:/home/pedro/source/tp1/projeto_tp1/main.cpp
+	<iostream>
+	"entidades.hpp"
 	"dominios.hpp"
-	"catch.hpp"
-	<string>
+	"testes.hpp"
 
 1712075103 /home/pedro/source/tp1/projeto_tp1/catch.hpp
 	<TargetConditionals.h>
@@ -1004,10 +1005,17 @@
 	<iomanip>
 	<cassert>
 
-1713220952 source:/home/pedro/source/tp1/projeto_tp1/entidades.cpp
+1713741226 source:/home/pedro/source/tp1/projeto_tp1/entidades.cpp
 	"dominios.hpp"
 	"entidades.hpp"
 
-1713221353 /home/pedro/source/tp1/projeto_tp1/entidades.hpp
+1713809751 /home/pedro/source/tp1/projeto_tp1/entidades.hpp
 	"dominios.hpp"
+
+1713965541 source:/home/pedro/source/tp1/projeto_tp1/testes.cpp
+	"testes.hpp"
+
+1713958930 /home/pedro/source/tp1/projeto_tp1/testes.hpp
+	"dominios.hpp"
+	"entidades.hpp"
 
