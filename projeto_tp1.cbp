@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Testes.cpp" />
+		<Unit filename="Testes.hpp" />
 		<Unit filename="catch.hpp" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.hpp" />
